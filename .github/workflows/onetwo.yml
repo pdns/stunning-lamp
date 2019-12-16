@@ -9,6 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: ./
+      with:
+        milliseconds: 1000
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
