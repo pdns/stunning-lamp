@@ -10,10 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: ./
+      id: eleven
       with:
         milliseconds: 1000
     - name: Run a one-line script
-      run: echo Hello, world!
+      run: echo Hello, world {{steps.eleven.outputs.time}}!
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
